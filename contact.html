@@ -9,20 +9,22 @@
 <body>
     <header>                <!--Entête avec liens de navigation-->
         <H1>Boulangerie artisanale LE FOURNIL</H1>
-    </header>
-
-    <nav>                   <!-- Menu déroulant de navigation du site-->
+    
+        <nav>                   <!-- Menu déroulant de navigation du site-->
             <UL class="menu">
                 <LI><A href="index.html" >Accueil</A></LI>
                 <LI><a href="carte.html">La carte</a></LI>
                 <LI><a href="contact.html">Contact</a></LI>
             </UL>
-    </NAV>
-    
+        </NAV>
+    </header>
     <main>
-        <form action="#" method="post">     <!-- Formulaire de contact-->
-            <fieldset>
-                <legend>Vos coordonnées</legend>        <!-- Partie COORDONNEES du formulaire-->
+        <!-- Formulaire de contact-->
+        <form action="#" method="post">     
+            <fieldset class="coordo">
+
+               <!-- Partie COORDONNEES du formulaire--> 
+                <legend>Vos coordonnées</legend>        
                     <label for="Nom" >Nom </label>
                         <input type="text" id="Nom" name="Nom" required>
                         
@@ -32,18 +34,21 @@
                     <label for="tel">Téléphone</label>
                         <input type="tel" id="tel" name="Téléphone" required>
             </fieldset>
-            <fieldset>
-                <legend>Votre commande</legend>         <!-- partie COMMANDE du formulaire-->
+            <fieldset class="commandes">
+                <!-- partie COMMANDE du formulaire-->
+                <legend>Votre commande</legend>         
                     <label for="date_retrait">Date de retrait</label>
                         <input type="date" name="date" id="date_retrait" required>
+
                     <label for="produit">produits</label>
-                    <select name="produits" id="produit" class="champ-produit" required>   <!-- MENU DEROULANT CHOIX PRODUIT-->
+                    <!-- MENU DEROULANT CHOIX PRODUIT-->
+                    <select name="produits" id="produit" class="champ-produit" required>   
                         <option value="">-- Choisissez un produit --</option>
                         <option value="Pain_complet">Pain complet</option>
                         <option value="Baguette_tradition">Baguette tradition</option>
                         <option value="Pain_de_campagne">Pain de campagne</option>
                     </select>
-
+                    <select name="Quantite" id="QUANTITE"></select>
                     <label for="Quantite">Quantité (entre 1 et 20)</label>                  <!--MENU DEROULANT QUANTITE SOUHAITEE-->
                         <input type="number"
                                name="Quantité"
@@ -51,9 +56,10 @@
                                class="champ-quantite"
                                min="1"
                                max="20" 
-                               required>
-                </fieldset>
-                <fieldset>
+                               required;>
+            </fieldset>
+            
+            <fieldset>
                 <legend>Sélectionnez un mode de retrait</legend>        <!-- MENU DEROULANT MODE DE RETRAIT DE LA COMMANDE-->
                 <div>
                     <input type="radio" id="En_magasin" name="retrait" value="En_magasin" required>
@@ -64,9 +70,10 @@
                     <label for="Livraison">Livraison</label>
                 </div>
             </fieldset>
- 
-            <label for="message-commande">Votre message (maximum 300 caractères)</label>     <!-- ZONE COMMENTAIRE CLIENT-->
-                <textarea name="message" id="message-commande" class="zone-texte" rows="5" maxlength="300"></textarea>
+            <div class="commentaire">
+                <label for="message-commande">Votre message (maximum 300 caractères)</label>     <!-- ZONE COMMENTAIRE CLIENT-->
+                <textarea name="message" id="message-commande"  rows="4" maxlength="300"></textarea>
+            </div>
             <br>
             <label for="CGV">Merci d'accepter les CGV</label>    <!-- CASE A COCHER CDG--> 
                 <input type="checkbox" name="CGV" id="CGV" required>
